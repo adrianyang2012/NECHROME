@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b074vc3uu3sc7"]
+
+[ext_resource type="Script" uid="uid://6gd7qghiwfrr" path="res://Managers/boss.gd" id="1_ya4dx"]
+[ext_resource type="Texture2D" uid="uid://dfsr2g2lw5wcn" path="res://assets/Piranha_01.png" id="2_6bn0y"]
+[ext_resource type="Script" uid="uid://cdja2cnhq654s" path="res://Managers/boss_arrow.gd" id="3_3dt73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xxrv"]
+size = Vector2(165, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skx2t"]
+size = Vector2(166, 114)
+
+[node name="Boss" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ya4dx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 0)
+shape = SubResource("RectangleShape2D_6xxrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_6bn0y")
+
+[node name="Arrow sensor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_3dt73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow sensor"]
+position = Vector2(7, 1)
+shape = SubResource("RectangleShape2D_skx2t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="area_entered" from="Arrow sensor" to="." method="_on_arrow_sensor_area_entered"]
+[connection signal="body_exited" from="Arrow sensor" to="." method="_on_arrow_sensor_body_exited"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpqc8oitaxrjb"]
+
+[ext_resource type="Script" uid="uid://bvq3hwb038j6d" path="res://Managers/ice_path.gd" id="1_ddjos"]
+[ext_resource type="Texture2D" uid="uid://djhg5op12sr5o" path="res://assets/ice.png" id="1_hkyty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddjos"]
+size = Vector2(167, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pl8r"]
+size = Vector2(161, 79)
+
+[node name="Ice path" type="Node2D"]
+script = ExtResource("1_ddjos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hkyty")
+offset = Vector2(-40, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(40, 0)
+texture = ExtResource("1_hkyty")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_ddjos")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_5pl8r")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://hur3fp1j2xsm"]
+
+[ext_resource type="Texture2D" uid="uid://c2he6lsxce12n" path="res://assets/pixel-heart-2779422_1280.webp" id="1_sfdnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqypx"]
+size = Vector2(224, 201.5)
+
+[node name="GIGA HEART" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8.000061, 13.000183)
+scale = Vector2(0.124511264, 0.13405155)
+texture = ExtResource("1_sfdnw")
+region_rect = Rect2(0, 0, 10.0303, 11.1705)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 18)
+shape = SubResource("RectangleShape2D_sqypx")

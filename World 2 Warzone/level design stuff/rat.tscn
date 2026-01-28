@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://drbuigofv0lnv"]
+
+[ext_resource type="Script" uid="uid://bkywlft6y6en" path="res://Managers/flying_rat.gd" id="1_p3nl4"]
+[ext_resource type="Texture2D" uid="uid://c5b62vi2xaago" path="res://assets/Spider3.png" id="2_172ra"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fgvd"]
+size = Vector2(346, 154)
+
+[node name="rat" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_p3nl4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.0000153, -25.499998)
+scale = Vector2(1.5779815, 1.5099999)
+texture = ExtResource("2_172ra")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+scale = Vector2(0.06, 0.06)
+target_position = Vector2(3083.3333, 16.666666)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.03, 0.03)
+target_position = Vector2(1433.3333, -6.265299e-05)
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+rotation = 4.712389
+scale = Vector2(0.03, 0.03)
+target_position = Vector2(5700, 133.33327)
+hit_from_inside = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.06, 0.06)
+target_position = Vector2(2850, -16.666916)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -28)
+shape = SubResource("RectangleShape2D_6fgvd")
+
+[node name="KnockBack" type="Timer" parent="."]
+
+[node name="DisplayTimer" type="Timer" parent="."]
+
+[node name="DisplayLabel" type="Label" parent="."]
+offset_left = -7.5
+offset_top = -102.0
+offset_right = 72.0
+offset_bottom = -14.0
+theme_override_font_sizes/font_size = 64
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="KnockBack" to="." method="_on_knock_back_timeout"]
+[connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]

@@ -1,0 +1,126 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5eykeulay532"]
+
+[ext_resource type="Script" uid="uid://bltgd2p5llm7v" path="res://create apple/Anay's stuff/ui.gd" id="1_3qr5g"]
+[ext_resource type="Texture2D" uid="uid://q5531eigsenv" path="res://create apple/Anay's stuff/pixel-heart-2779422_1280.webp" id="1_ssvel"]
+
+[node name="UI" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_3qr5g")
+
+[node name="Hearts" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -468.0
+offset_top = -39.0
+offset_right = -6.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="Heart" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 42.0
+offset_bottom = 50.5
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart2" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 4.5
+offset_right = 90.0
+offset_bottom = 49.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart3" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 4.5
+offset_right = 144.00003
+offset_bottom = 49.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart4" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 4.5
+offset_right = 188.0
+offset_bottom = 49.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart5" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 4.5
+offset_right = 234.0
+offset_bottom = 49.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart6" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 4.5
+offset_right = 280.0
+offset_bottom = 49.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart7" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 4.5
+offset_right = 326.0
+offset_bottom = 49.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart8" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 4.5
+offset_right = 372.0
+offset_bottom = 49.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart9" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 3.5
+offset_right = 415.3333
+offset_bottom = 48.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Heart10" type="TextureRect" parent="Hearts"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 3.5
+offset_right = 458.0
+offset_bottom = 48.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ssvel")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

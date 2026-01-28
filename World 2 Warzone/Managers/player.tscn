@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwvk6jxshs8p7"]
+
+[ext_resource type="Script" uid="uid://c853djerfuf8x" path="res://Managers/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://3l3v75hl27jg" path="res://games/Screenshot_2026-01-22_at_10.13.25_PM-removebg-preview.png" id="2_mdsel"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 9
+script = ExtResource("1_onrkg")
+HACKER_MODE = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -96)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_mdsel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -81)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Timer4" type="Timer" parent="."]
+wait_time = 11.0
+one_shot = true
+
+[node name="Timer5" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Timer6" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="Timer7" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Timer8" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
+[connection signal="timeout" from="Timer6" to="." method="_on_timer_6_timeout"]
+[connection signal="timeout" from="Timer7" to="." method="_on_timer_7_timeout"]
+[connection signal="timeout" from="Timer8" to="." method="_on_timer_8_timeout"]

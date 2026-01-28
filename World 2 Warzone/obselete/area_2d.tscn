@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv6hl0bc5cp46"]
+
+[ext_resource type="Script" uid="uid://bitdwlq27hrw" path="res://Managers/area_2d.gd" id="1_higph"]
+[ext_resource type="Texture2D" uid="uid://c4vbupnl3lrax" path="res://assets/Dinosaur5-b.png" id="2_ax6ie"]
+[ext_resource type="Script" uid="uid://i6v1eluw1pdc" path="res://Managers/arrow_detector.gd" id="3_tfog0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
+size = Vector2(120, 267)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rgpn"]
+size = Vector2(104, 268)
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 9
+collision_mask = 2
+script = ExtResource("1_higph")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_ax6ie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 7.5)
+shape = SubResource("RectangleShape2D_dl81w")
+
+[node name="right" type="RayCast2D" parent="."]
+rotation = -1.5707964
+scale = Vector2(2.5, 2.5)
+
+[node name="left" type="RayCast2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(2.5, 2.5)
+
+[node name="down" type="RayCast2D" parent="."]
+scale = Vector2(6, 6)
+
+[node name="Arrow detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_tfog0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow detector"]
+position = Vector2(-2, 4)
+shape = SubResource("RectangleShape2D_5rgpn")
+
+[node name="Label" type="Label" parent="Arrow detector"]
+offset_left = -94.0
+offset_top = -245.0
+offset_right = -54.0
+offset_bottom = -157.0
+theme_override_font_sizes/font_size = 64
+
+[node name="Timer" type="Timer" parent="Arrow detector"]
+wait_time = 0.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="area_shape_entered" from="Arrow detector" to="Arrow detector" method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="Arrow detector" to="Arrow detector" method="_on_area_shape_exited"]
+[connection signal="timeout" from="Arrow detector/Timer" to="Arrow detector" method="_on_timer_timeout"]

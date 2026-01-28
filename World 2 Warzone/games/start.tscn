@@ -1,0 +1,120 @@
+[gd_scene load_steps=13 format=3 uid="uid://sxvnrh0gw2tu"]
+
+[ext_resource type="Texture2D" uid="uid://dcbsw6hlsrvbd" path="res://assets/costume3-2.png" id="1_1n0d2"]
+[ext_resource type="Texture2D" uid="uid://b1s3nev0p366f" path="res://assets/costume4.png" id="2_y5hus"]
+[ext_resource type="Script" uid="uid://doicrlvoscw44" path="res://Managers/button.gd" id="3_oiuna"]
+[ext_resource type="Texture2D" uid="uid://cyrigjqphq5tv" path="res://assets/costume12.png" id="4_y5hus"]
+[ext_resource type="Script" uid="uid://7inr0hmbkl76" path="res://Managers/instruction_start.gd" id="5_oiuna"]
+[ext_resource type="Texture2D" uid="uid://7be4a7606ar0" path="res://assets/costume6-5.png" id="6_pob1m"]
+[ext_resource type="Texture2D" uid="uid://cgynijl2jo3jr" path="res://assets/costume16.png" id="7_gophc"]
+[ext_resource type="Texture2D" uid="uid://dtnu2kycyyhbf" path="res://assets/costume17.png" id="8_p0nl4"]
+[ext_resource type="Script" uid="uid://bmuv4ugqeueke" path="res://Managers/difficulty_button.gd" id="9_gophc"]
+[ext_resource type="Texture2D" uid="uid://bmsnvpgopxrki" path="res://assets/Journey.png" id="10_p0nl4"]
+[ext_resource type="Texture2D" uid="uid://dmpja04k2wmq5" path="res://assets/costume19.png" id="11_da165"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da165"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pob1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gophc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p0nl4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Start" type="Sprite2D"]
+z_index = 200
+scale = Vector2(4.0020833, 3.0638888)
+texture = ExtResource("1_1n0d2")
+
+[node name="Button" type="Sprite2D" parent="."]
+texture = ExtResource("2_y5hus")
+
+[node name="Button" type="Button" parent="Button"]
+offset_left = -180.4
+offset_top = -61.799995
+offset_right = 180.99997
+offset_bottom = 57.999992
+text = "
+"
+flat = true
+script = ExtResource("3_oiuna")
+
+[node name="Timer" type="Timer" parent="Button/Button"]
+
+[node name="Timer2" type="Timer" parent="Button/Button"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="Button/Button"]
+wait_time = 0.05
+one_shot = true
+
+[node name="Timer4" type="Timer" parent="Button/Button"]
+wait_time = 2.5
+one_shot = true
+
+[node name="Button2" type="Sprite2D" parent="."]
+position = Vector2(0.24986987, 170.37172)
+texture = ExtResource("4_y5hus")
+script = ExtResource("5_oiuna")
+
+[node name="Button" type="Button" parent="Button2"]
+offset_left = -179.9063
+offset_top = -57.769722
+offset_right = 179.65645
+offset_bottom = 60.054398
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-313.58667, 173.30917)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_da165")
+
+[node name="Button" type="Button" parent="AnimatedSprite2D"]
+offset_left = -304.8412
+offset_top = -60.924805
+offset_right = 304.00836
+offset_bottom = 62.012634
+flat = true
+script = ExtResource("9_gophc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-352.81625, 91.71352)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_p0nl4")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -182.40503
+offset_top = -59.836807
+offset_right = 179.90625
+offset_bottom = 60.924744
+flat = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-352.06665, 21.867634)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_da165")
+
+[node name="tutorial_button" type="Button" parent="Sprite2D2"]
+offset_left = -179.90613
+offset_top = -59.836807
+offset_right = 181.5722
+offset_bottom = 58.748863
+flat = true
+
+[connection signal="pressed" from="Button/Button" to="Button/Button" method="_on_pressed"]
+[connection signal="timeout" from="Button/Button/Timer" to="Button/Button" method="_on_timer_timeout"]
+[connection signal="timeout" from="Button/Button/Timer2" to="Button/Button" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Button/Button/Timer4" to="Button/Button" method="_on_timer_4_timeout"]
+[connection signal="pressed" from="Button2/Button" to="Button2" method="_on_button_pressed"]
+[connection signal="pressed" from="AnimatedSprite2D/Button" to="AnimatedSprite2D/Button" method="_on_pressed"]
+[connection signal="pressed" from="Sprite2D/Button" to="Button/Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Sprite2D2/tutorial_button" to="Button/Button" method="_on_tutorial_button_pressed"]

@@ -1,0 +1,22 @@
+res://Managers/arrow.tscn
+res://Managers/damage_setter.gd
+res://Managers/glider_rat.gd
+res://level design stuff/glider_rat.tscn
+res://Managers/damage_detector_rat.gd
+res://Managers/sword_killer.tscn
+res://games/game.tscn
+res://Managers/sword.tscn
+res://Managers/sword_killer.gd
+res://Managers/flying_rat.gd
+res://level design stuff/Danger zone/mesesage_rat.tscn
+res://Managers/mesesage_rat.gd
+res://Managers/player.tscn
+res://Managers/player.gd
+res://level design stuff/rat.tscn
+res://level design stuff/guard_rat.tscn
+res://Managers/health_manager.gd
+res://level design stuff/Danger zone/shady_guy.tscn
+res://games/game2.tscn
+res://games/game_3.tscn
+res://games/game_journey.tscn
+res://create apple/Anay's stuff/ui.gd

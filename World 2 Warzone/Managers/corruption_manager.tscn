@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch06iylo03iyn"]
+
+[ext_resource type="Script" uid="uid://bjkhxl0ony05l" path="res://Managers/corruption_manager.gd" id="1_8d6um"]
+
+[node name="corruption manager" type="Node2D"]
+script = ExtResource("1_8d6um")
+
+[node name="corruption amount" type="Label" parent="."]
+offset_right = 604.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 64
+text = "Corruption: x"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

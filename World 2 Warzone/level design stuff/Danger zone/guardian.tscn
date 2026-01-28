@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh6a7efg6c26d"]
+
+[ext_resource type="Texture2D" uid="uid://dnv8wrwu4mes" path="res://assets/duck.png" id="1_1mwot"]
+[ext_resource type="Script" uid="uid://bj7dbm7oieyew" path="res://Managers/guardian.gd" id="1_3jwwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mwot"]
+size = Vector2(330, 565.5)
+
+[node name="Guardian" type="Node2D"]
+script = ExtResource("1_3jwwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1mwot")
+
+[node name="detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detector"]
+position = Vector2(-49, -159.25)
+shape = SubResource("RectangleShape2D_1mwot")
+
+[node name="Label" type="Label" parent="."]
+z_index = 201
+offset_left = 61.0
+offset_top = -417.0
+offset_right = 766.0
+offset_bottom = -203.0
+theme_override_font_sizes/font_size = 64
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+z_index = 201
+offset_left = -578.0
+offset_top = -329.0
+offset_right = -96.0
+offset_bottom = -106.0
+theme_override_font_sizes/font_size = 64
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

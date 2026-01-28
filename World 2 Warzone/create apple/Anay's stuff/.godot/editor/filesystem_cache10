@@ -1,0 +1,24 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1762922731
+8-bit_pixel_goomba_super_mario_bros_nes_nintendo_art_diy_tutorial_pixel_grid-1-removebg-preview.png::CompressedTexture2D::6206183916082702195::1762917982::1762922743::1::::<><><>0<>0<>baa74cef00d8ef4b5ed2f5e97a6cea7d<>res://.godot/imported/8-bit_pixel_goomba_super_mario_bros_nes_nintendo_art_diy_tutorial_pixel_grid-1-removebg-preview.png-7efd96fa5f36d57c0763f1f4ac1b1096.ctex::
+9. Big Threat.ogg::AudioStreamOggVorbis::2188432287109058284::1762917982::1762922743::1::::<><><>0<>0<>d0e34ee92e1dcdbc5f55e5be947f0024<>res://.godot/imported/9. Big Threat.ogg-cf5dc51136fa5f309a898aad75679e0b.oggvorbisstr::
+Apple.png::CompressedTexture2D::4581877796826202453::1762917982::1762922743::1::::<><><>0<>0<>9fb2b75e941e14fdf252150de120a753<>res://.godot/imported/Apple.png-6cd13b76053e3795414d24077e6ea26f.ctex::
+apple_guyo.gd::GDScript::2609942771058354174::1762917982::0::1::::<>Area2D<><>0<>0<><>::
+area_2d.tscn::PackedScene::1896979872327814190::1762917982::0::1::::<><><>0<>0<><>::uid://de7fh64wrvobo::::res://HealthUI.png
+blocks_preview.png::CompressedTexture2D::7679701811299497028::1762917982::1762922743::1::::<><><>0<>0<>2e4a3325d03bade90d9516c4ae07d220<>res://.godot/imported/blocks_preview.png-0b9c3182523040675e69eda151c69562.ctex::
+death_zone.gd::GDScript::3867818992122698016::1762917982::0::1::::<>Area2D<><>0<>0<><>::
+default_bus_layout.tres::AudioBusLayout::6507021105494457192::1762922051::0::1::::<><><>0<>0<><>::
+game.tscn::PackedScene::6410579035261751415::1762922566::0::1::::<><><>0<>0<><>::uid://dhodtjibpor1m::::res://blocks_preview.png<>uid://c6ms21kslahs0::::res://player.tscn<>uid://q5531eigsenv::::res://pixel-heart-2779422_1280.webp<>uid://ivh6p0o1g7a6::::res://goombaboss.tscn<>uid://bvduociiwsmaa::::res://death_zone.gd<>uid://bcaer41yy8y4k::::res://music.tscn<>uid://c81blfrovp5pc::::res://giga_heart.tscn<>uid://dhdt31vy3l82k::::res://giga_heart.gd
+game_manager.gd::GDScript::9192428451731776967::1762917982::0::1::::<>Node<><>0<>0<><>::
+giga_heart.gd::GDScript::7657982114075944572::1762917982::0::1::::<>Area2D<><>0<>0<><>::
+giga_heart.tscn::PackedScene::7142827679315754816::1762917982::0::1::::<><><>0<>0<><>::uid://de7fh64wrvobo::::res://HealthUI.png
+goombaboss.gd::GDScript::9081736204468475547::1762917982::0::1::::<>RigidBody2D<><>0<>0<><>::
+goombaboss.tscn::PackedScene::605343887641407471::1762917982::0::1::::<><><>0<>0<><>::uid://d2ni4r50m4a0b::::res://goombaboss.gd<>uid://cuok7bmvxnao6::::res://8-bit_pixel_goomba_super_mario_bros_nes_nintendo_art_diy_tutorial_pixel_grid-1-removebg-preview.png
+health.gd::GDScript::1240881329711454538::1762917982::0::1::::<>Area2D<><>0<>0<><>::
+HealthUI.png::CompressedTexture2D::7506395273328833312::1762917982::1762922743::1::::<><><>0<>0<>b20eb3c1cbcc7e9607c81f52e1ed14be<>res://.godot/imported/HealthUI.png-e267a3c19982cce33f2864019dec74d4.ctex::
+icon.svg::CompressedTexture2D::8781497454424671683::1762917982::1762922743::1::::<><><>0<>0<>f01101982381a86884bdf39b8107f870<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+music.tscn::PackedScene::2527073161902531916::1762917982::0::1::::<><><>0<>0<><>::uid://6gdfpaafx4ou::::res://9. Big Threat.ogg
+pixel-heart-2779422_1280.webp::CompressedTexture2D::1186825715001177807::1762917982::1762922743::1::::<><><>0<>0<>a1fd99581d150b4b5f71ef2749779a4f<>res://.godot/imported/pixel-heart-2779422_1280.webp-89537b0a050f1d26afb0bcb30787e330.ctex::
+player.gd::GDScript::5393959583859868193::1762917982::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::6974610557406845833::1762917982::0::1::::<><><>0<>0<><>::uid://dxd28k8eikns2::::res://icon.svg<>uid://ci34yxtwr4mld::::res://player.gd
+tileset cropped 256x256.PNG::CompressedTexture2D::2532129676982812996::1762917982::1762922743::1::::<><><>0<>0<>d4ecc53d503140031eac5ddeea56f143<>res://.godot/imported/tileset cropped 256x256.PNG-45f06fafee939f9a80d87e9ac85c0444.ctex::

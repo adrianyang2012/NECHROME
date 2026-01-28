@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cylelf8u8di31"]
+
+[ext_resource type="Script" uid="uid://bmkwc4tsisoiu" path="res://Managers/bow_manager.gd" id="1_8iju2"]
+[ext_resource type="Texture2D" uid="uid://c52dj54ily34d" path="res://assets/bow2.png" id="1_vk1bi"]
+
+[node name="Gun" type="Node2D"]
+
+[node name="bow manager" type="Node2D" parent="."]
+script = ExtResource("1_8iju2")
+
+[node name="bow" type="Sprite2D" parent="bow manager"]
+position = Vector2(1.1920929e-07, 0.9999999)
+rotation = 2.3177972
+scale = Vector2(1, 0.9875)
+texture = ExtResource("1_vk1bi")

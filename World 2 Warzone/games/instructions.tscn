@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6gncrftesfxs"]
+
+[ext_resource type="Texture2D" uid="uid://dh3ps1n86keef" path="res://assets/costume1-9.png" id="1_7ls63"]
+[ext_resource type="Texture2D" uid="uid://cxjqncu4e4sr4" path="res://assets/costume1-10.png" id="2_h8hbf"]
+[ext_resource type="Script" uid="uid://ddtpto7wjxdfe" path="res://Managers/instruction_button.gd" id="2_ne5nb"]
+
+[node name="Instructions" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.2516975e-05, 0.9999895)
+scale = Vector2(1.1979166, 0.89444435)
+texture = ExtResource("1_7ls63")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 285.0
+offset_top = -67.0
+offset_right = 518.0
+offset_bottom = 137.0
+flat = true
+script = ExtResource("2_ne5nb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(123, 99)
+texture = ExtResource("2_h8hbf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

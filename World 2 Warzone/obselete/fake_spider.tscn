@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://pl4jb46p2epg"]
+
+[ext_resource type="Texture2D" uid="uid://c5b62vi2xaago" path="res://assets/Spider3.png" id="1_1jwpx"]
+[ext_resource type="Script" uid="uid://bp06u7stppa8a" path="res://obselete/fake_spider.gd" id="1_yb1yn"]
+
+[node name="fake spider" type="Node2D"]
+script = ExtResource("1_yb1yn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1jwpx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

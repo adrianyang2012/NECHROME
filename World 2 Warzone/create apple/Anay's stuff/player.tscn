@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6ms21kslahs0"]
+
+[ext_resource type="Texture2D" uid="uid://dxd28k8eikns2" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ci34yxtwr4mld" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(102, 106)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(126, 393.5)
+scale = Vector2(0.8125, 0.835938)
+texture = ExtResource("1_4flbx")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(126, 393)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 5.0
+autostart = true
+
+[node name="Dash" type="Timer" parent="."]
+wait_time = 0.12
+
+[node name="Super Jump" type="Timer" parent="."]
+wait_time = 0.12
+
+[node name="Pound" type="Timer" parent="."]
+wait_time = 0.001
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Dash" to="." method="_on_dash_timeout"]
+[connection signal="timeout" from="Super Jump" to="." method="_on_super_jump_timeout"]
+[connection signal="timeout" from="Pound" to="." method="_on_pound_timeout"]

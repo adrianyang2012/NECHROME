@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt5j6rb6bcw0n"]
+
+[ext_resource type="Texture2D" uid="uid://bkrhyibgj5bph" path="res://assets/costume1-7.png" id="1_7cihc"]
+[ext_resource type="Script" uid="uid://ejmk836bl3x3" path="res://Managers/boss_door.gd" id="1_jm6fi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm6fi"]
+size = Vector2(306, 513)
+
+[node name="Boss door" type="Node2D"]
+script = ExtResource("1_jm6fi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-3, -1.5)
+shape = SubResource("RectangleShape2D_jm6fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7cihc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

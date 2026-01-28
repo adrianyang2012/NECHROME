@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://2a58mo1ww54m"]
+
+[ext_resource type="Texture2D" uid="uid://de7fh64wrvobo" path="res://HealthUI.png" id="1_gf172"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
+size = Vector2(83.5, 79)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="HealthUi" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(69.1855, 24.0731)
+scale = Vector2(9.16287, 7.01461)
+texture = ExtResource("1_gf172")
+region_enabled = true
+region_rect = Rect2(0, 0, 10.5, 10.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(72.25, 20)
+shape = SubResource("RectangleShape2D_dl81w")

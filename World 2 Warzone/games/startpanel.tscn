@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d183jfuiy87c0"]
+
+[ext_resource type="PackedScene" uid="uid://sxvnrh0gw2tu" path="res://games/start.tscn" id="1_1fqed"]
+[ext_resource type="Script" uid="uid://dg7ompx2dt2w" path="res://Managers/startpanel.gd" id="1_7xwcb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xwcb")
+
+[node name="Start" parent="." instance=ExtResource("1_1fqed")]
+position = Vector2(2, 7)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c81blfrovp5pc"]
+
+[ext_resource type="Texture2D" uid="uid://de7fh64wrvobo" path="res://HealthUI.png" id="1_p5hal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqypx"]
+size = Vector2(224, 201.5)
+
+[node name="GIGA HEART" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(823.25, -101.875)
+scale = Vector2(24.95, 20.3864)
+texture = ExtResource("1_p5hal")
+region_enabled = true
+region_rect = Rect2(0, 0, 10.0303, 11.1705)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(836, -114.25)
+shape = SubResource("RectangleShape2D_sqypx")

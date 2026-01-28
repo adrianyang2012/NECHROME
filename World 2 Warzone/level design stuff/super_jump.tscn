@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnpguwwxlhm5t"]
+
+[ext_resource type="Texture2D" uid="uid://cb6e5ga8lao0u" path="res://assets/cake3.png" id="1_sr8pe"]
+[ext_resource type="Script" uid="uid://c33octcgqx3h" path="res://Managers/cake.gd" id="2_suedf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr8pe"]
+size = Vector2(143.5, 79)
+
+[node name="Super Jump" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_sr8pe")
+
+[node name="cake" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_suedf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cake"]
+position = Vector2(0.25, 0.5)
+shape = SubResource("RectangleShape2D_sr8pe")
+
+[connection signal="body_entered" from="cake" to="cake" method="_on_body_entered"]
